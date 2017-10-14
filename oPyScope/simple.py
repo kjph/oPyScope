@@ -6,7 +6,7 @@ import pkg_resources
 import configparser
 from matplotlib import pyplot as plt
 
-import pyScope.input_handle
+import oPyScope.input_handle
 
 class ScopeTimeSeries(object):
     """Object to analyse Osilloscope data
@@ -34,7 +34,7 @@ class ScopeTimeSeries(object):
         # Load the data
         if self.conf['input']['file_type'] == 'csv':
             #self.get_data_csv(file_path)
-            self.signal = pyScope.input_handle.get_data_csv(file_path, 
+            self.signal = oPyScope.input_handle.get_data_csv(file_path, 
                                                             delimiter=self.conf['csv_handle']['delimiter'],
                                                             skip_header=int(self.conf['csv_handle']['skip_header']))
 

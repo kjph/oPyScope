@@ -3,9 +3,9 @@
 
 import os
 
-from pyScope.configure import configure_simple_timeseries
-from pyScope.simple import ScopeTimeSeries
-from pyScope.words import binary_seq_to_hex_words
+from oPyScope.configure import configure_simple_timeseries
+from oPyScope.simple import ScopeTimeSeries
+from oPyScope.words import binary_seq_to_hex_words
 
 def main():
 
@@ -17,6 +17,7 @@ def main():
 
     # Initialise the scope object
     scope = ScopeTimeSeries(target_path, conf_path="./SimpleTimeSeries.ini")
+    scope.plot_signal()
 
     # Analyse the sequence
     bit_seq = scope.get_bit_sequence_edge(bit_period=1.4e-04)
