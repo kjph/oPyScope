@@ -1,6 +1,16 @@
 # oPyScope
 Python package to analyse Oscilloscope data
 
+## Installation
+
+``` bash
+
+$ cd ~/Somewhere/
+$ git clone https://github.com/kjph/oPyScope.git
+$ python -m pip install -e oPyScope
+
+```
+
 ## Usage
 
 1. Save your signal from the oscilloscope to a `.csv` file
