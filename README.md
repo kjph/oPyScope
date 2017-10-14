@@ -28,14 +28,15 @@ from oPyScope.simple import ScopeTimeSeries
 from oPyScope.words import binary_seq_to_hex_words
 
 def main():
-    # Specify the path of the data
-    target_path = os.path.join("../data", "dpjn01.csv")
 
     # Set up the configuration (Optional), default is already shipped
     configure_simple_timeseries(dir_to_save = ".", file_name = "SimpleTimeSeries")
+    
+    # Specify the path of the data
+    data_file_path = os.path.join("../data", "SomeSignal.csv")
 
     # Initialise the scope object
-    scope = ScopeTimeSeries(target_path, conf_path="./SimpleTimeSeries.ini")
+    scope = ScopeTimeSeries(data_file_path, conf_path="./SimpleTimeSeries.ini")
     
     # Plot the signal
     scope.plot_signal()
