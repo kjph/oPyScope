@@ -20,7 +20,7 @@ class ScopeTimeSeries(object):
     def _configure(self, conf_path):
         # Configure the object
         if conf_path is None:
-            conf_str = pkg_resources.resource_string("pyScope.resources", 
+            conf_str = pkg_resources.resource_string("oPyScope.resources", 
                                                      "ScopeTimeSeriesDefault.ini")
             conf_str = conf_str.decode("ascii")
             self.conf = configparser.ConfigParser()
