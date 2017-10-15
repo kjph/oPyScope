@@ -4,7 +4,7 @@
 import os
 
 from oPyScope.configure import configure_simple_timeseries
-from oPyScope.simple import ScopeTimeSeries
+from oPyScope.core.processing.SimpleScope import SimpleScope
 from oPyScope.words import binary_seq_to_hex_words
 
 def main():
@@ -13,10 +13,10 @@ def main():
     target_path = os.path.join("../data", "dpjn01.csv")
 
     # Set up the configuration (Optional), default is already shipped
-    configure_simple_timeseries(dir_to_save = ".", file_name = "SimpleTimeSeries")
+    #configure_simple_timeseries(dir_to_save = ".", file_name = "SimpleTimeSeries")
 
     # Initialise the scope object
-    scope = ScopeTimeSeries(target_path, conf_path="./SimpleTimeSeries.ini")
+    scope = SimpleScope(target_path)
     scope.plot_signal()
 
     # Analyse the sequence

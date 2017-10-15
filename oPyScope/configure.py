@@ -70,12 +70,15 @@ def configure_simple_timeseries(dir_to_save = None, file_name = None):
     low_min = user_input("Digital Low min value", default = 0, expected_type=float)
     low_max = user_input("Digital Low max value", default = 1.4, expected_type=float)
     time_edge = user_input("Rise/Fall Time expected", default = 1.96e-6, expected_type=float)
+    sig_grad_factor = user_input("Edge detection gradient scale factor", default = 0.5, expected_type=float)
 
     conf.set("sig_digital_tol", "high_min", "%0.9f" % high_min)
     conf.set("sig_digital_tol", "high_max", "%0.9f" % high_max)
     conf.set("sig_digital_tol", "low_min", "%0.9f" % low_min)
     conf.set("sig_digital_tol", "low_max", "%0.9f" % low_max)
     conf.set("sig_digital_tol", "time_edge", "%0.9f" % time_edge)
+    conf.set("sig_digital_tol", "sig_grad_factor", "%0.9f" % sig_grad_factor)
+    
 
 
     with open(target, 'w') as configfile:
